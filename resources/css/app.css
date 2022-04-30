@@ -1,0 +1,59 @@
+.header {
+    position: relative;
+}
+
+.empresas-parceiras {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+}
+
+.empresas-parceiras ul {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.empresas-parceiras ul li {
+    position: relative;
+    padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    display: inline-block;
+}
+
+#mainNav {
+    position: relative !important;
+    background-color: var(--bs-green);
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+}
+
+#navbarResponsive ul {
+    display: flex;
+    justify-content: space-around;
+    margin: 0!important;
+    text-align: center;
+    width: 100%;
+}
+
+#navbarResponsive ul li {
+    width: 20%;
+}
+
+#navbarResponsive ul li .nav-link {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+#navbarResponsive ul li.active {
+    border-bottom: 5px solid white;
+}
+
+
+#navbarResponsive ul li:hover {
+    background-color: white;
+}

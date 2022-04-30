@@ -1,0 +1,27 @@
+.navbar-nav {
+    position: relative;
+    display: inline-flex;
+}
+
+.topbar {
+    width: 100%;
+    position: relative;
+    display: inline-flex;
+}
+
+.sub-content {
+    position: absolute;
+    margin:auto;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    padding-left: 5px;
+    padding-top: 10px;
+}
+
+.sidebar {
+    width: 100% !important;
+}

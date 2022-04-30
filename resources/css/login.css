@@ -1,0 +1,126 @@
+body {
+    background-color: #333 !important;
+}
+.form-login {
+    position: absolute;
+    min-width: 40vw;
+    max-width: 40vw;
+    height: 60vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    right: 0;
+    margin: auto;
+    padding: 50px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
+    /* border-top-right-radius: 0px; */
+    /* border-bottom-right-radius: 0px; */
+    /* border-right: 5px solid var(--bs-green); */
+}
+
+.form-login a {
+    color: var(--bs-green) !important;
+}
+
+.form-login .right {
+    position: absolute;
+    margin: auto;
+    top: 0%;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    padding-left: 40px;
+    background: rgba(255,255,255,0.8);
+}
+
+.form-login .left {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    filter: blur(3px);
+    background-image: url(https://boaforma.abril.com.br/wp-content/uploads/sites/2/2017/01/thinkstockphotos-472257920.jpg);
+    background-position:0 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 0px;
+    border-right: 2px solid rgba(129, 129, 129);
+}
+
+
+.form-login .forget-pass {
+    /* border: 1px solid white; */
+    background-color: rgb(255, 255, 255, 0.6);
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 1px;
+    /* background-color: var(--bs-green); */
+}
+.form-login label {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 1 1px rgba(0, 0, 0, 1);
+}
+
+.btn-primary {
+    background-color: var(--bs-green) !important;
+    border-color: var(--bs-green) !important;
+}
+
+@media screen and (max-width: 800px) {
+    .form-login {
+        position: absolute;
+        width: 100vw;
+        max-width:100vw;
+        min-width:100vw;
+        height: 100vh;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        right: 0;
+        margin: auto;
+        padding: 50px;
+        background-color: white;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        /* border-right: 5px solid var(--bs-green); */
+    }
+    .form-login .right {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        padding: 20px;
+        padding-left: 40px;
+        width: 100%;
+        z-index: 10;
+        background-color: rgb(255, 255, 255, 0.5);
+    }
+    
+    .form-login .left {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        filter: blur(2px);
+        background-image: url(https://boaforma.abril.com.br/wp-content/uploads/sites/2/2017/01/thinkstockphotos-472257920.jpg);
+        background-position: 50% 100%;
+        background-size: auto 100%;
+        border-radius: 0px;
+        border-right: 2px solid rgba(129, 129, 129);
+    }
+}
