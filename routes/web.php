@@ -17,13 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix("/")->group(function(){
     Route::get("/", [IndexController::class, "index"])->name("home");
+    Route::get("/eventos", [IndexController::class, "eventos"])->name('eventos');
 });
 
 Route::prefix("/admin")->group(function(){
     Route::get("/", [AdminController::class, "index"])->name("login");
     Route::post("/logar", [AdminController::class, "login"])->name("logar");
 });
-
 
 Route::prefix("/admin/dashboard")->group(function(){
     Route::get("/", [AdminController::class, "dashboard"])->middleware('auth')->name('dashboard');
@@ -33,6 +33,7 @@ Route::prefix("/admin/dashboard")->group(function(){
     Route::get("/configuracoes", [AdminController::class, "configuracoes"])->middleware('auth')->name('configuracoes');
     Route::post("/save_configs", [AdminController::class, "save_configs"])->middleware('auth')->name('salvar_configuracoes');
 });
+
 // Route::get('/', function () {
 // Route::get('/', function () {
 //     return view('index');

@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'f86f746a5f8ffc5f70766a1d119cae21d63555d7',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -17,6 +17,15 @@
             'install_path' => __DIR__ . '/../asm89/stack-cors',
             'aliases' => array(),
             'reference' => '73e5b88775c64ccc0b84fb60836b30dc9d92ac4a',
+            'dev_requirement' => false,
+        ),
+        'barryvdh/laravel-debugbar' => array(
+            'pretty_version' => 'v3.6.7',
+            'version' => '3.6.7.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../barryvdh/laravel-debugbar',
+            'aliases' => array(),
+            'reference' => 'b96f9820aaf1ff9afe945207883149e1c7afb298',
             'dev_requirement' => false,
         ),
         'brick/math' => array(
@@ -422,12 +431,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'f86f746a5f8ffc5f70766a1d119cae21d63555d7',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -491,6 +500,15 @@
             'install_path' => __DIR__ . '/../league/mime-type-detection',
             'aliases' => array(),
             'reference' => 'ff6248ea87a9f116e78edd6002e39e5128a0d4dd',
+            'dev_requirement' => false,
+        ),
+        'maximebf/debugbar' => array(
+            'pretty_version' => 'v1.18.0',
+            'version' => '1.18.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../maximebf/debugbar',
+            'aliases' => array(),
+            'reference' => '0d44b75f3b5d6d41ae83b79c7a4bceae7fbc78b6',
             'dev_requirement' => false,
         ),
         'mockery/mockery' => array(
@@ -1005,6 +1023,15 @@
             'install_path' => __DIR__ . '/../symfony/css-selector',
             'aliases' => array(),
             'reference' => 'b0a190285cd95cb019237851205b8140ef6e368e',
+            'dev_requirement' => false,
+        ),
+        'symfony/debug' => array(
+            'pretty_version' => 'v4.4.41',
+            'version' => '4.4.41.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/debug',
+            'aliases' => array(),
+            'reference' => '6637e62480b60817b9a6984154a533e8e64c6bd5',
             'dev_requirement' => false,
         ),
         'symfony/deprecation-contracts' => array(

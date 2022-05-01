@@ -163,9 +163,10 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Package Service Providers...
-         */
-
+        * Package Service Providers...
+        */
+        Barryvdh\Debugbar\ServiceProvider::class,
+        
         /*
          * Application Service Providers...
          */
@@ -203,6 +204,7 @@ return [
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
         'Date' => Illuminate\Support\Facades\Date::class,
         'DB' => Illuminate\Support\Facades\DB::class,
+        'Debugbar' => 'Barryvdh\Debugbar\Facade',
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
         'Event' => Illuminate\Support\Facades\Event::class,
         'File' => Illuminate\Support\Facades\File::class,

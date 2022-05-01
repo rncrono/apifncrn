@@ -9,7 +9,7 @@ class Configuracoes extends Model
 {
     use HasFactory;
 
-    public function getKeyToValues(){
+    public static function getKeyToValues(){
         $configuracoes = Configuracoes::all();
         $configs = [];
         foreach ($configuracoes as $key => $valor)     {
