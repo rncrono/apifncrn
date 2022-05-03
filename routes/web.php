@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::prefix("/")->group(function(){
     Route::get("/", [IndexController::class, "index"])->name("home");
     Route::get("/eventos", [IndexController::class, "eventos"])->name('eventos');
+    Route::get("/estrada", [IndexController::class, "estrada"])->name('estrada');
+    Route::get("/mtb", [IndexController::class, "mtb"])->name('mtb');
 });
 
 Route::prefix("/admin")->group(function(){

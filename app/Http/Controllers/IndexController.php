@@ -9,6 +9,7 @@ use App\Models\Configuracoes;
 
 class IndexController extends Controller
 {
+
     public function index(Request $request) {
         $eventos = Eventos::all();
 
@@ -18,8 +19,23 @@ class IndexController extends Controller
     }
     
     public function eventos(){
+
+        $configs = Configuracoes::getKeyToValues();
+        
+        return view("home.eventos", ['config' => $configs]);
+    }
+    
+    public function estrada(){
+
         $configs = Configuracoes::getKeyToValues();
 
-        return view("home.eventos", ['config' => $configs]);
+        return view('home.estrada', ['config' => $configs]);
+    }
+
+    public function mtb(){
+
+        $configs = Configuracoes::getKeyToValues();
+
+        return view('home.mtb', ['config' => $configs]);
     }
 }
