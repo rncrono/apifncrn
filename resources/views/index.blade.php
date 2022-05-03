@@ -219,8 +219,8 @@
     <section class="page-section" id="contact">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Contact Us</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading text-uppercase">Contate-nos</h2>
+                <h3 class="section-subheading text-muted">Entre em contato conosco se desejar.</h3>
             </div>
             <!-- * * * * * * * * * * * * * * *-->
             <!-- * * SB Forms Contact Form * *-->
@@ -233,27 +233,27 @@
                 <div class="row align-items-stretch mb-5">
                     <div class="col-md-6">
                         <div class="form-group">
-                            Name input-->
-                            <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            Nome:
+                            <input class="form-control" id="name" type="text" placeholder="Seu nome *" data-sb-validations="required" />
+                            <div class="invalid-feedback" data-sb-feedback="name:required">O nome é obrigatório.</div>
                         </div>
                         <div class="form-group">
-                            Email address input-->
-                            <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
-                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            Endereço de Email:
+                            <input class="form-control" id="email" type="email" placeholder="Seu email *" data-sb-validations="required,email" />
+                            <div class="invalid-feedback" data-sb-feedback="email:required">O email é obrigatório.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email não é válido.</div>
                         </div>
                         <div class="form-group mb-md-0">
-                            Phone number input-->
+                            Número de telefone:
                             <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">O número de telefone é obrigatório.</div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group form-group-textarea mb-md-0">
-                            Message input-->
-                            <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            Mensagem:
+                            <textarea class="form-control" id="message" placeholder="Sua mensagem *" data-sb-validations="required"></textarea>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">A mensagem é obrigatória.</div>
                         </div>
                     </div>
                 </div>
@@ -275,7 +275,7 @@
                 <!-- an error submitting the form-->
                 <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                 <!-- Submit Button-->
-                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
+                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">ENVIAR MENSAGEM</button></div>
             </form>
         </div>
     </section>
