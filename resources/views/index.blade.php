@@ -2,7 +2,7 @@
 @section('style')
     <style type="text/css">
         header.masthead .background {
-            background-image: url('<?=$config['banner_inicial']?>') !important;
+            background-image: url('<?=$configs['banner_inicial']['valor']?>') !important;
         }
     </style>
 @endsection
@@ -13,22 +13,17 @@
         </div>
         <div class="container">
             <ul>
-                <li>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" width="100px"/>
-                </li>
-                <li>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" width="100px"/>
-                </li>
-                <li>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" width="100px"/>
-                </li>
-                <li>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" width="100px"/>
-                </li>
+                <?php foreach ($configs['patrocinadores']['valor'] as $key => $value) { 
+                    if ($value!="") { ?>
+                        <li>
+                            <img src="<?=$value?>"/>
+                        </li>
+                    <?php } ?>
+                <?php } ?>
             </ul>
         </div>
     </section>
-<!-- Portfolio Grid-->
+    <!-- Portfolio Grid-->
     <section class="page-section bg-light" id="portfolio">
         <div class="container">
             <div class="text-center">

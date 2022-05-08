@@ -14,8 +14,10 @@ class IndexController extends Controller
         $eventos = Eventos::all();
 
         $configs = Configuracoes::getKeyToValues();
-        
-        return view("index", ['eventos' => $eventos, 'config' => $configs]);
+        if (isset($configs['patrocinadores'])) {
+            $configs['patrocinadores']['valor'] = explode(";", $configs["patrocinadores"]['valor']);
+        }
+        return view("index", ['eventos' => $eventos, 'configs' => $configs]);
     }
     
     public function eventos(){

@@ -27,7 +27,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="#organizador">Organizador:</label><br>
-                    <select id="organizador" class="form-select" name>
+                    <select id="organizador" class="form-select" name="organizador">
                       <option>-- SELECIONE --</option>
                       @foreach ($organizadores as $organizador)
                         <option value="{{ $organizador->id }}">{{ $organizador->name }}</option>

@@ -30,6 +30,7 @@ Route::prefix("/admin")->group(function(){
 Route::prefix("/admin/dashboard")->group(function(){
     Route::get("/", [AdminController::class, "dashboard"])->middleware('auth')->name('dashboard');
     Route::get("/eventos", [AdminController::class, "eventos"])->middleware('auth')->name('eventos');
+    Route::get("/eventos/{message}", [AdminController::class, "eventos"])->middleware('auth')->name('eventos_message');
     Route::post("/delete_evento", [AdminController::class, "delete_evento"])->middleware('auth')->name('delete_evento');
     Route::post("/adicionar_evento", [AdminController::class, "adicionar_evento"])->middleware('auth')->name('adicionar_evento');
     Route::get("/configuracoes", [AdminController::class, "configuracoes"])->middleware('auth')->name('configuracoes');

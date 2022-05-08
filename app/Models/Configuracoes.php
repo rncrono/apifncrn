@@ -13,8 +13,7 @@ class Configuracoes extends Model
         $configuracoes = Configuracoes::all();
         $configs = [];
         foreach ($configuracoes as $key => $valor)     {
-            $configs += ['id' => $valor['id']];
-            $configs += [$valor['propriedade'] => $valor['valor']];
+            $configs += [$valor['propriedade'] => [ "id" => $valor['id'], "valor" => $valor['valor']]];
         }
         return $configs;
     }

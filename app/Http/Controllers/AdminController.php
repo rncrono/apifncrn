@@ -37,6 +37,7 @@ class AdminController extends Controller
     public function eventos(){
         // pegando eventos com nome do organizador 
         $eventos = Eventos::select(
+                            'eventos.id as id', 
                             'eventos.name as evento_titulo', 
                             'eventos.data as data',
                             'users.name as organizador_nome')->join('organizador', 'organizador.id', '=', 'eventos.organizador_id')
@@ -51,9 +52,11 @@ class AdminController extends Controller
     public function configuracoes(){
         $configuracoes = Configuracoes::all();
         $configs = [];
-        foreach ($configuracoes as $key => $valor)     {
-            $configs += ['id' => $valor['id']];
-            $configs += [$valor['propriedade'] => $valor['valor']];
+        foreach ($configuracoes as $key => $config) {
+            if ($config['propriedade']=="patrocinadores") {
+                $config['valor'] = explode(";", $config['valor']);
+            }
+            $configs += [$config['propriedade'] => ["id" => $config['id'], "valor" => $config['valor']]];
         }
         return view('admin.dashboard.configuracoes.index', ['configs' => $configs]);
     }
@@ -71,10 +74,24 @@ class AdminController extends Controller
     }
 
     public function adicionar_evento(Request $request){
-        die(print_r($request->post()));
+        $evento = new Eventos();
+        if ($request->post()!==null) {
+            $evento->name = $request->post()['name']; 
+            $evento->data = $request->post()['data']; 
+            $evento->organizador_id = $request->post()['organizador']; 
+            $evento->save();
+            return redirect(route("eventos_message", 1));
+        }else {
+            return redirect(route("eventos_message", 0));
+        }
     }
 
     public function delete_evento(Request $request){
-        return '1';
+        $evento = Eventos::find($request->post()['id']);
+        if ($evento->delete()) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }
