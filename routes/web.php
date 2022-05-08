@@ -24,6 +24,7 @@ Route::prefix("/")->group(function(){
 
 Route::prefix("/admin")->group(function(){
     Route::get("/", [AdminController::class, "index"])->name("login");
+    Route::get("/logout", [AdminController::class, "logout"])->name("logout");
     Route::post("/logar", [AdminController::class, "login"])->name("logar");
 });
 

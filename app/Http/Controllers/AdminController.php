@@ -94,4 +94,10 @@ class AdminController extends Controller
             return 0;
         }
     }
+
+    public function logout(){
+        Auth::logout();
+        
+        return redirect(route('login'));
+    }
 }

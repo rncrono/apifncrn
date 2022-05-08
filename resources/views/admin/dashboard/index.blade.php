@@ -22,7 +22,7 @@
 @section('onPageJS')
     <script>
         $(function(){
-            alert(1);
+            
         });
     </script>
 @endsection

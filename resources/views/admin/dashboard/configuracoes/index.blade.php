@@ -26,19 +26,43 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2>Patrocinadores:</h2>
-                        <?php foreach ($configs['patrocinadores']['valor'] as $key => $value) { 
-                            if ($value!="") { ?>
-                                <div class="row mb-2">
+                        <?php $i = 0; ?>
+                        @foreach ($configs['patrocinadores']['valor'] as $key => $value)
+                            @if ($value!="")
+                                <div class="row pl-2 mb-2">
                                     <div class="col-md-4 text-center" style="border: 1px solid black;">
-                                        <img width="40%" src="<?=$value?>"/>
+                                        <img width="80%" src="<?=$value?>"/>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Endereço da logo:</label>
-                                        <input class="form-control inputs-config-patrocinadores" type="text" value="<?=$value?>" name="patrocinadores" data-id="<?=$configs['patrocinadores']['id']?>" data-type="array"/>
+                                        <table width="100%">
+                                            <tr>
+                                                <td>
+                                                    <input id="input-patrocinador-url-<?=$i?>" data-id-logo="<?=$i?>" class="toggleInputPatrocinadores" type="radio" name="tipo_upload_logo<?=$i?>" value="1" checked/> Link
+                                                </td>
+                                                <td>
+                                                    <input id="input-patrocinador-upload-<?=$i?>" data-id-logo="<?=$i?>" class="toggleInputPatrocinadores" type="radio" name="tipo_upload_logo<?=$i?>" value="0"/> Upload de imagem
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="input-logo-<?=$i?> input-logo-url-<?=$i?>">
+                                                    <label>Endereço da logo:</label>
+                                                    <input class="form-control inputs-config-patrocinadores" type="text" value="<?=$value?>" name="patrocinadores" data-id="<?=$configs['patrocinadores']['id']?>" data-type="array"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12" style="display:none;">
+                                                <div class="input-logo-<?=$i?> input-logo-upload-<?=$i?>">
+                                                    <input type="file"/>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            <?php } ?>
-                        <?php } ?>
+                                <?php $i++; ?>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -47,7 +71,16 @@
 @endsection
 @section('onPageJS')
     <script type="text/javascript">
+        function uploadArquivo(arquivo){
+                
+        }
+
         $(function(){
+            $(".toggleInputPatrocinadores").click(function(){
+                var id = $(this).attr("data-id-logo");
+                $()
+            });  
+
             $("#saveChanges").click(function(){
                 var inputs_id = [];
                 var inputs_values = [];
