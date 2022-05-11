@@ -16,7 +16,7 @@
                 <?php foreach ($configs['patrocinadores']['valor'] as $key => $value) { 
                     if ($value!="") { ?>
                         <li>
-                            <img src="<?=$value?>"/>
+                            <img width="25%" src="<?=$value?>"/>
                         </li>
                     <?php } ?>
                 <?php } ?>
@@ -504,5 +504,5 @@
     </div>
 @endsection
 @section('onScriptPage')
-<script type="module" src="<?=mix("/js/app.js")?>"></script>
+    <script src="<?=mix("/js/app.js")?>"></script>
 @endsection
