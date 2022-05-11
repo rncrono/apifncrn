@@ -8,7 +8,7 @@
 @endsection
 @section('content')
     <section class="page-section">
-        <div id="container text-center">
+        <div id="container" class="text-center">
             <img width="60%" src="<?=asset('assets/img/estrada/banner.jpg')?>"/>
         </div>
     </section>
