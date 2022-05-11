@@ -16,7 +16,7 @@
                 <?php foreach ($configs['patrocinadores']['valor'] as $key => $value) { 
                     if ($value!="") { ?>
                         <li>
-                            <img width="25%" src="<?=$value?>"/>
+                            <img width="35%" src="<?=$value?>"/>
                         </li>
                     <?php } ?>
                 <?php } ?>
