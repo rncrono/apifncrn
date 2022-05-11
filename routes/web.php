@@ -38,6 +38,8 @@ Route::prefix("/admin/dashboard")->group(function(){
     Route::post("/save_configs", [AdminController::class, "save_configs"])->middleware('auth')->name('salvar_configuracoes');
 });
 
+Route::get('/teste', [ApiController::class, 'index'])->name("teste");
+
 // Route::get('/', function () {
 // Route::get('/', function () {
 //     return view('index');

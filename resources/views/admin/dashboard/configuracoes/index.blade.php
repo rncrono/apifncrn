@@ -34,17 +34,17 @@
                                         <img width="80%" src="<?=$value?>"/>
                                     </div>
                                     <div class="col-md-6">
-                                        <table width="100%">
+                                        <table style="margin-left:15px;" width="100%">
                                             <tr>
                                                 <td>
-                                                    <input id="input-patrocinador-url-<?=$i?>" data-id-logo="<?=$i?>" class="toggleInputPatrocinadores" type="radio" name="tipo_upload_logo<?=$i?>" value="1" checked/> Link
+                                                    <input class="form-check-input toggleInputPatrocinadores" id="input-patrocinador-url-<?=$i?>" data-id-logo="<?=$i?>" class="" type="radio" name="tipo_upload_logo<?=$i?>" value="1" checked/> Link
                                                 </td>
                                                 <td>
-                                                    <input id="input-patrocinador-upload-<?=$i?>" data-id-logo="<?=$i?>" class="toggleInputPatrocinadores" type="radio" name="tipo_upload_logo<?=$i?>" value="0"/> Upload de imagem
+                                                    <input class="form-check-input toggleInputPatrocinadores" id="input-patrocinador-upload-<?=$i?>" data-id-logo="<?=$i?>" class="" type="radio" name="tipo_upload_logo<?=$i?>" value="0"/> Upload de imagem
                                                 </td>
                                             </tr>
                                         </table>
-                                        
+                                        <hr>
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="input-logo-<?=$i?> input-logo-url-<?=$i?>">
@@ -76,27 +76,36 @@
         }
 
         $(function(){
+            var tipo_logo = [0, 0, 0, 0];
             $(".toggleInputPatrocinadores").click(function(){
                 var id = $(this).attr("data-id-logo");
-                $()
-            });  
+                tipo_logo[id] = $(this).val();
+                if ($(this).val()==1) {
+                    $(".input-logo-url-" + id).parent('.col-md-12').css("display", "block");
+                    $(".input-logo-upload-" + id).parent('.col-md-12').css("display", "none");
+                } else {
+                    $(".input-logo-upload-" + id).parent('.col-md-12').css("display", "block");
+                    $(".input-logo-url-" + id).parent('.col-md-12').css("display", "none");
+                }
+            });
 
             $("#saveChanges").click(function(){
                 var inputs_id = [];
                 var inputs_values = [];
-                $("body").find(".inputs-config").each(function(){
-                    inputs_id.push($(this).attr('data-id'));
-                    inputs_values.push($(this).val());
-                });
-                var patrocinadores = "";
-                $("body").find(".inputs-config-patrocinadores").each(function(){
-                    patrocinadores += $(this).val() + ";";
-                });
-                inputs_id.push($(".inputs-config-patrocinadores:first").attr('data-id'));
-                inputs_values.push(patrocinadores);
-                $.post("{{ route('salvar_configuracoes') }}", { '_token':"{{ csrf_token()}}", 'inputs_id':inputs_id, 'inputs_values':inputs_values}, function(response){
-                    window.location.href="#";
-                });
+                console.log();
+                // $("body").find(".inputs-config").each(function(){
+                //     inputs_id.push($(this).attr('data-id'));
+                //     inputs_values.push($(this).val());
+                // });
+                // var patrocinadores = "";
+                // $("body").find(".inputs-config-patrocinadores").each(function(){
+                //     patrocinadores += $(this).val() + ";";
+                // });
+                // inputs_id.push($(".inputs-config-patrocinadores:first").attr('data-id'));
+                // inputs_values.push(patrocinadores);
+                // $.post("{{ route('salvar_configuracoes') }}", { '_token':"{{ csrf_token()}}", 'inputs_id':inputs_id, 'inputs_values':inputs_values}, function(response){
+                //     window.location.href="#";
+                // });
             });
         });
     </script>

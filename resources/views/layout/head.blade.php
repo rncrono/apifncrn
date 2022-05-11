@@ -2,7 +2,7 @@
 <header class="masthead">
     <div class="container">
         <div class="masthead-subheading">FNC</div>
-        <div class="masthead-heading text-uppercase" style="font-size: 2.5em; background-color: rgba(0, 0, 0, 0.5)">Federação Norte-Rio-Grandense de Ciclismo</div>
+        <div class="masthead-heading text-uppercase" style="background-color: rgba(0, 0, 0, 0.5)">Federação Norte-Rio-Grandense de Ciclismo</div>
         <!-- <a class="btn btn-primary btn-xl text-uppercase" href="#services">TITULO2</a> -->
     </div>
     <div class="background" style="position: absolute; margin:auto; top: 0; bottom:0; left: 0; right: 0;z-index: -1;"></div>
