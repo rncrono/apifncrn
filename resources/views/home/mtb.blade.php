@@ -8,8 +8,8 @@
 @endsection
 @section('content')
     <section class="page-section">
-        <div id="container">
-            <img width="100%" src="<?=asset('assets/img/mtb/banner.jpg')?>"/>
+        <div id="container text-center">
+            <img width="60%" src="<?=asset('assets/img/mtb/banner.jpg')?>"/>
         </div>
     </section>
 @endsection

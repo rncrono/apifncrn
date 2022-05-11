@@ -23,6 +23,7 @@
                 <li class="nav-item <?= ($_SERVER['REQUEST_URI']=="/bmx") ? 'active' : '' ?>"><a class="nav-link" href="">BMX</a></li>
                 <li class="nav-item <?= ($_SERVER['REQUEST_URI']=="/filiacao") ? 'active' : '' ?>"><a class="nav-link" href="#team">Filiação</a></li>
                 <li class="nav-item <?= ($_SERVER['REQUEST_URI']=="/contateus") ? 'active' : '' ?>"><a class="nav-link" href="#contact">Fale Conosco</a></li>
+                <li class="nav-item <?= ($_SERVER['REQUEST_URI']=="/ranking") ? 'active' : '' ?>"><a class="nav-link" href="#ranking">Ranking</a></li>
             </ul>
         </div>
     </div>
