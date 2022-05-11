@@ -92,20 +92,20 @@
             $("#saveChanges").click(function(){
                 var inputs_id = [];
                 var inputs_values = [];
-                console.log();
-                // $("body").find(".inputs-config").each(function(){
-                //     inputs_id.push($(this).attr('data-id'));
-                //     inputs_values.push($(this).val());
-                // });
-                // var patrocinadores = "";
-                // $("body").find(".inputs-config-patrocinadores").each(function(){
-                //     patrocinadores += $(this).val() + ";";
-                // });
-                // inputs_id.push($(".inputs-config-patrocinadores:first").attr('data-id'));
-                // inputs_values.push(patrocinadores);
-                // $.post("{{ route('salvar_configuracoes') }}", { '_token':"{{ csrf_token()}}", 'inputs_id':inputs_id, 'inputs_values':inputs_values}, function(response){
-                //     window.location.href="#";
-                // });
+                // console.log();
+                $("body").find(".inputs-config").each(function(){
+                    inputs_id.push($(this).attr('data-id'));
+                    inputs_values.push($(this).val());
+                });
+                var patrocinadores = "";
+                $("body").find(".inputs-config-patrocinadores").each(function(){
+                    patrocinadores += $(this).val() + ";";
+                });
+                inputs_id.push($(".inputs-config-patrocinadores:first").attr('data-id'));
+                inputs_values.push(patrocinadores);
+                $.post("{{ route('salvar_configuracoes') }}", { '_token':"{{ csrf_token()}}", 'inputs_id':inputs_id, 'inputs_values':inputs_values}, function(response){
+                    window.location.href="#";
+                });
             });
         });
     </script>
