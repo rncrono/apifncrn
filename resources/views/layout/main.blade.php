@@ -19,6 +19,9 @@
         @yield('style')
     </head>
     <body id="page-top">
+        <div id="#app">
+
+        </div>
         <div class="header" >
             @include('layout.head')
         </div>
@@ -26,6 +29,7 @@
             @yield('content')
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
         <script src="<?=asset('js/scripts.js')?>"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
         <!-- <script src="https://unpkg.com/vue@3"></script> -->

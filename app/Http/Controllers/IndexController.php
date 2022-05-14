@@ -22,7 +22,7 @@ class IndexController extends Controller
     
     public function eventos(){
 
-        $configs = Configuracoes::getKeyToValues();
+        $configs = Configuracoes::getKeyToValues();     
         
         return view("home.eventos", ['config' => $configs]);
     }

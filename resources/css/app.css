@@ -26,8 +26,13 @@
     position: relative;
     padding: 20px;
     padding-top: 40px;
+    text-align: center;
     padding-bottom: 20px;
     display: inline-block;
+}
+
+.empresas-parceiras ul li img {
+    width: 50%;
 }
 
 #mainNav {

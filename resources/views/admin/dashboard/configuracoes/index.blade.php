@@ -54,7 +54,7 @@
                                             </div>
                                             <div class="col-md-12" style="display:none;">
                                                 <div class="input-logo-<?=$i?> input-logo-upload-<?=$i?>">
-                                                    <input type="file"/>
+                                                    <input type="file" />
                                                 </div>
                                             </div>
                                         </div>
@@ -71,6 +71,7 @@
 @endsection
 @section('onPageJS')
     <script type="text/javascript">
+        
         function uploadArquivo(arquivo){
                 
         }

@@ -38,9 +38,8 @@ Route::prefix("/admin/dashboard")->group(function(){
     Route::post("/save_configs", [AdminController::class, "save_configs"])->middleware('auth')->name('salvar_configuracoes');
 });
 
-Route::get('/teste', [ApiController::class, 'index'])->name("teste");
-
-// Route::get('/', function () {
-// Route::get('/', function () {
-//     return view('index');
-// });
+Route::prefix('/api')->group(function(){
+    Route::get('/configs', [ApiController::class, 'getConfigs'])->middleware("cors")->name("configs");
+    Route::get('/noticias', [ApiController::class, 'getNoticias'])->middleware("cors")->name("noticias");
+    Route::get('/empresas-parceiras', [ApiController::class, 'getEmpresasParceiras'])->middleware("cors")->name("empresas-parceiras");
+});
