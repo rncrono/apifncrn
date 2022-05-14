@@ -39,7 +39,7 @@ Route::prefix("/admin/dashboard")->group(function(){
 });
 
 Route::prefix('/api')->group(function(){
-    Route::get('/configs', [ApiController::class, 'getConfigs'])->middleware("cors")->name("configs");
-    Route::get('/noticias', [ApiController::class, 'getNoticias'])->middleware("cors")->name("noticias");
-    Route::get('/empresas-parceiras', [ApiController::class, 'getEmpresasParceiras'])->middleware("cors")->name("empresas-parceiras");
+    Route::get('/configs', [ApiController::class, 'getConfigs'])->name("configs");
+    Route::get('/noticias', [ApiController::class, 'getNoticias'])->name("noticias");
+    Route::get('/empresas-parceiras', [ApiController::class, 'getEmpresasParceiras'])->name("empresas-parceiras");
 });
