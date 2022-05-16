@@ -38,8 +38,9 @@ Route::prefix("/admin/dashboard")->group(function(){
     Route::post("/save_configs", [AdminController::class, "save_configs"])->middleware('auth')->name('salvar_configuracoes');
 });
 
-Route::prefix('/api')->group(function(){
-    Route::get('/configs', [ApiController::class, 'getConfigs'])->name("configs");
-    Route::get('/noticias', [ApiController::class, 'getNoticias'])->name("noticias");
-    Route::get('/empresas-parceiras', [ApiController::class, 'getEmpresasParceiras'])->name("empresas-parceiras");
-});
+// Route::prefix('/api')->group(function(){
+//     Route::post('/logar', [ApiController::class, 'logar'])->name("login");
+//     Route::get('/configs', [ApiController::class, 'getConfigs'])->name("configs");
+//     Route::get('/noticias', [ApiController::class, 'getNoticias'])->name("noticias");
+//     Route::get('/empresas-parceiras', [ApiController::class, 'getEmpresasParceiras'])->name("empresas-parceiras");
+// });

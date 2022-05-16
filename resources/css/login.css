@@ -1,7 +1,7 @@
 body {
     background-color: #333 !important;
 }
-.form-login {
+.form {
     position: absolute;
     min-width: 40vw;
     max-width: 40vw;
@@ -22,11 +22,11 @@ body {
     /* border-right: 5px solid var(--bs-green); */
 }
 
-.form-login a {
+.form a {
     color: var(--bs-green) !important;
 }
 
-.form-login .right {
+.form .right {
     position: absolute;
     margin: auto;
     top: 0%;
@@ -38,7 +38,7 @@ body {
     background: rgba(255,255,255,0.8);
 }
 
-.form-login .left {
+.form .left {
     position: absolute;
     margin: auto;
     top: 0;
@@ -55,7 +55,7 @@ body {
 }
 
 
-.form-login .forget-pass {
+.form .forget-pass {
     /* border: 1px solid white; */
     background-color: rgb(255, 255, 255, 0.6);
     padding-left: 3px;
@@ -63,7 +63,7 @@ body {
     border-radius: 1px;
     /* background-color: var(--bs-green); */
 }
-.form-login label {
+.form label {
     font-size: 1.2em;
     text-shadow: 1px 1px 1 1px rgba(0, 0, 0, 1);
 }
@@ -74,7 +74,7 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-    .form-login {
+    .form {
         position: absolute;
         width: 100vw;
         max-width:100vw;
@@ -95,7 +95,7 @@ body {
         border-bottom-right-radius: 0px;
         /* border-right: 5px solid var(--bs-green); */
     }
-    .form-login .right {
+    .form .right {
         position: absolute;
         margin: auto;
         top: 0;
@@ -108,7 +108,7 @@ body {
         background-color: rgb(255, 255, 255, 0.5);
     }
     
-    .form-login .left {
+    .form .left {
         position: absolute;
         margin: auto;
         top: 0;
