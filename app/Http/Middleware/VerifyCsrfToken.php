@@ -13,6 +13,7 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         'http://localhost:8000/*',
+        'http://fncrn.com.br/*',
         'https://fncrn.com.br/*',
     ];
 }
