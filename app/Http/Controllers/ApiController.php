@@ -52,4 +52,35 @@ class ApiController extends Controller
             $empresas
         ]);
     }
+
+    public function getImagens(Request $request) {
+        $imagens = Configuracoes::getKeyToValues();
+        return response()->json([
+            $imagens
+        ]);
+    }
+
+    public function setImage(Request $request) {
+        $i = $request->post()['id'];
+        $propriedade = $request->post()['propriedade'];
+        $config = Configuracoes::where('propriedade', $propriedade)->get()[0];
+        if ($propriedade=="patrocinadores") {
+            $array_patrocinadores = explode(";", $config->valor);
+            $array_patrocinadores[$i] = $request->post()['valor'];
+            $config->valor = implode(";", $array_patrocinadores);
+        } else {
+            $config->valor = $request->post()['valor'];
+        }
+        if ($config->save()) {
+            return response()->json([
+                'situation' => true,
+                'url' => $request->post()['valor']
+            ]);
+        } else {
+            return response()->json([
+                'situation' => false,
+                'url' => null
+             ]);
+        }
+    }
 }

@@ -35,4 +35,7 @@ Route::get('/configs', [ApiController::class, 'getConfigs'])->name("configs");
 Route::get('/noticias', [ApiController::class, 'getNoticias'])->name("noticias");
 
 Route::get('/empresas-parceiras', [ApiController::class, 'getEmpresasParceiras'])->name("empresas-parceiras");
-// Route::middleware('auth:sanctum')->get
+
+Route::get('/getimagens', [ApiController::class, 'getImagens'])->name('getImagens');
+
+Route::post('/setImage', [ApiController::class, 'setImage'])->name('setImage');
