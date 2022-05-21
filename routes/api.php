@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,15 +21,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::get("/login", function(){
-//     return response()->json([
-//         false
-//     ]);
-// });
+Route::middleware('auth:sanctum')->get('/logout', function (Request $request) {
+    auth()->user()->tokens()->delete();
+    return response()->json([
+        'message' => true
+    ]);
+});
 
 Route::post("/logar", [LoginController::class, "logar"])->name('login');
-
-Route::get("/userLogged", [LoginController::class, "isLogado"])->name('isLogado');
 
 Route::get('/configs', [ApiController::class, 'getConfigs'])->name("configs");
 
@@ -38,4 +38,4 @@ Route::get('/empresas-parceiras', [ApiController::class, 'getEmpresasParceiras']
 
 Route::get('/getimagens', [ApiController::class, 'getImagens'])->name('getImagens');
 
-Route::post('/setImage', [ApiController::class, 'setImage'])->name('setImage');
+Route::middleware('auth:sanctum')->post('/setImage', [ApiController::class, 'setImage'])->name('setImage');

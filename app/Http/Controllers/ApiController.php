@@ -13,6 +13,12 @@ class ApiController extends Controller
         ], 200);
     }
 
+    public function getToken(Request $request) {
+        return response()->json([
+            "_token" => csrf_token()
+        ], 200);
+    }
+
     public function getConfigs(Request $request) {
         $configs = Configuracoes::getKeyToValues();
         return response()->json([

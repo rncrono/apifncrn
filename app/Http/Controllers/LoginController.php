@@ -11,19 +11,31 @@ use App\Models\User;
 class LoginController extends Controller
 {
     public function logar(Request $request){
-        $login = $request->post()['login'];
-        $password = $request->post()['pass'];
-        if (isset(User::where('login', $login)->get()[0])) {
-            $user = User::where('login', $login)->get()[0];
-            if (Hash::check($password, $user->password)) {
-                return true;
-            } else {
-                return false;
-            }
+        $credentials = $request->only('login', 'password');
+        if (auth()->attempt($credentials)) {
+            $token = auth()->user()->createToken('auth_token');
+            return response()->json([
+                'token' => $token->plainTextToken
+            ]);
         } else {
-            return false;
+            return resposnse()->json([
+                "token" => null
+            ]);
         }
-        return false;
+    }
+
+    public function logout(Request $request) {
+        $credentials = $request->only('login', 'password');
+        if (auth()->attempt($credentials)) {
+            $token = auth()->user()->tokens()->delete();
+            return response()->json([
+                'token' => $token->plainTextToken
+            ]);
+        } else {
+            return resposnse()->json([
+                "token" => null
+            ]);
+        }
     }
 
     public function isLogado(){
