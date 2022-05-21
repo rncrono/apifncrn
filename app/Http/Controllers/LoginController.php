@@ -18,7 +18,7 @@ class LoginController extends Controller
                 'token' => $token->plainTextToken
             ]);
         } else {
-            return resposnse()->json([
+            return response()->json([
                 "token" => null
             ]);
         }
@@ -32,7 +32,7 @@ class LoginController extends Controller
                 'token' => $token->plainTextToken
             ]);
         } else {
-            return resposnse()->json([
+            return response()->json([
                 "token" => null
             ]);
         }
