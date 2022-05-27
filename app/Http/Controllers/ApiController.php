@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Configuracoes;
+use App\Models\Imagem;
 
 class ApiController extends Controller
 {
@@ -54,33 +55,35 @@ class ApiController extends Controller
 
     public function getEmpresasParceiras(Request $request) {
         $empresas = Configuracoes::find(2);
+        $url_imagem = Imagem::select('id', 'valor', 'referencia')->where('id_referencia', $empresas->id)->get();    
         return response()->json([
-            $empresas
+            $url_imagem
         ]);
     }
 
-    public function getImagens(Request $request) {
-        $imagens = Configuracoes::getKeyToValues();
+    public function getConfiguracoes(Request $request) {
+        $configs_imagens = Configuracoes::where('valor', 'imagem')->get();
+        $imagens = [];
+        foreach ($configs_imagens as $key => $imagem) {
+            $url_imagem = Imagem::select('id', 'valor', 'referencia', 'tipo')->where('id_referencia', $imagem->id)->get();
+            $imagens += [$url_imagem[0]['referencia'] => $url_imagem];
+        }
         return response()->json([
             $imagens
         ]);
     }
 
     public function setImage(Request $request) {
-        $i = $request->post()['id'];
-        $propriedade = $request->post()['propriedade'];
-        $config = Configuracoes::where('propriedade', $propriedade)->get()[0];
-        if ($propriedade=="patrocinadores") {
-            $array_patrocinadores = explode(";", $config->valor);
-            $array_patrocinadores[$i] = $request->post()['valor'];
-            $config->valor = implode(";", $array_patrocinadores);
-        } else {
-            $config->valor = $request->post()['valor'];
-        }
-        if ($config->save()) {
+        $id = $request->post()['id'];
+        $valor = $request->post()['valor'];
+        $tipo = $request->post()['tipo'];
+        $imagem = Imagem::where('id', $id)->get()[0];
+        $imagem->valor = $valor;
+        $imagem->tipo = $tipo;
+        if ($imagem->save()) {
             return response()->json([
                 'situation' => true,
-                'url' => $request->post()['valor']
+                'url' => $valor
             ]);
         } else {
             return response()->json([

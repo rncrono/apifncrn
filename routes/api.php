@@ -36,6 +36,6 @@ Route::get('/noticias', [ApiController::class, 'getNoticias'])->name("noticias")
 
 Route::get('/empresas-parceiras', [ApiController::class, 'getEmpresasParceiras'])->name("empresas-parceiras");
 
-Route::get('/getimagens', [ApiController::class, 'getImagens'])->name('getImagens');
+Route::get('/getconfiguracoes', [ApiController::class, 'getConfiguracoes'])->name('getConfiguracoes');
 
-Route::middleware('auth:sanctum')->post('/setImage', [ApiController::class, 'setImage'])->name('setImage');
+Route::middleware('auth:sanctum')->post('/setimage', [ApiController::class, 'setImage'])->name('setImage');
