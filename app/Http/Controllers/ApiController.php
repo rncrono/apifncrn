@@ -96,6 +96,7 @@ class ApiController extends Controller
         $new_image->id_referencia = $id->id;
         $new_image->referencia = $referencia;
         $new_image->valor = $valor;
+        $new_image->tipo = 2;
         if ($new_image->save()) {
             return response()->json([
                 "imagem" => $new_image
