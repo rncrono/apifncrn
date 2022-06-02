@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Configuracoes;
 use App\Models\Imagem;
+use App\Models\Eventos;
 
 class ApiController extends Controller
 {
@@ -14,10 +15,21 @@ class ApiController extends Controller
         ], 200);
     }
 
-    public function getToken(Request $request) {
+    public function getEventos(Request $request) {
+        $eventos = Eventos::all();
         return response()->json([
-            "_token" => csrf_token()
-        ], 200);
+            $eventos
+        ]);
+    }
+
+    public function adicionarEvento(Request $request) {
+        $evento = new Eventos();
+        $evento->name = $request->post()['name'];
+        $evento->descricao_curta = $request->post()['descricao_curta'];
+        $evento->organizador_id = $request->post()['organizador_id'];
+        $evento->ativo = 1;
+        $evento->thumb = $request->post()['thumb'];
+        
     }
 
     public function getConfigs(Request $request) {
@@ -71,6 +83,28 @@ class ApiController extends Controller
         return response()->json([
             $imagens
         ]);
+    }
+
+    public function addImage(Request $request){
+        $valor = $request->post()['valor'];
+        $referencia = $request->post()['referencia'];
+ 
+        $id = Imagem::select('id')->where('referencia', $referencia)->get()[0];
+        
+        $new_image = new Imagem();
+
+        $new_image->id_referencia = $id->id;
+        $new_image->referencia = $referencia;
+        $new_image->valor = $valor;
+        if ($new_image->save()) {
+            return response()->json([
+                "imagem" => $new_image
+            ]);
+        } else {
+            return response()->json([
+                "result" => false
+            ]);
+        }
     }
 
     public function setImage(Request $request) {
